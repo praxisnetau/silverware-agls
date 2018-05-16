@@ -1,0 +1,60 @@
+---
+Name: silverware-agls
+---
+
+# Configure Page Extensions:
+
+Page:
+  extensions:
+    - SilverWare\AGLS\Extensions\PageExtension
+  agls_schemas:
+    dcterms:
+      name: schema.DCTERMS
+      href: http://purl.org/dc/terms
+    aglsterms:
+      name: schema.AGLSTERMS
+      href: http://www.agls.gov.au/agls/terms
+  agls_metadata:
+    creator:
+      name: DCTERMS.creator
+      property: AGLSCreator
+      scheme: AGLSTERMS.AglsAgent
+    publisher:
+      name: DCTERMS.publisher
+      property: AGLSPublisher
+      scheme: AGLSTERMS.AglsAgent
+    title:
+      name: DCTERMS.title
+      property: AGLSTitle
+    subject:
+      name: DCTERMS.subject
+      property: AGLSSubject
+    identifier:
+      name: DCTERMS.identifier
+      property: AGLSIdentifier
+    description:
+      name: DCTERMS.description
+      property: AGLSDescription
+    created:
+      name: DCTERMS.created
+      property: AGLSCreatedFormatted
+      scheme: DCTERMS.ISO8601
+    modified:
+      name: DCTERMS.modified
+      property: AGLSModifiedFormatted
+      scheme: DCTERMS.ISO8601
+    language:
+      name: DCTERMS.language
+      property: AGLSLanguage
+      scheme: DCTERMS.RFC4646
+    aggregation:
+      name: AGLSTERMS.aggregationLevel
+      property: AGLSAggregationLevel
+  agls_created_format: y-MM-dd
+  agls_modified_format: y-MM-dd'T'HH:mm:ssxxxxx
+
+# Configure Site Configuration:
+
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - SilverWare\AGLS\Extensions\Config\AGLSConfig
